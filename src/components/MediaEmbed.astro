@@ -1,0 +1,63 @@
+---
+import { Image } from "astro:assets";
+import type { Media } from "../data/projects";
+interface Props { media: Media; class?: string; }
+const { media, class: className = "" } = Astro.props;
+
+// deterministic bar heights for the decorative waveform (no layout shift, SSR-stable)
+const bars = Array.from({ length: 28 }, (_, i) => {
+  const h = 30 + Math.round(50 * Math.abs(Math.sin(i * 0.7) * Math.cos(i * 0.27)));
+  return Math.max(14, h);
+});
+---
+{media.kind === "image" && (
+  <button
+    type="button"
+    class={`media-trigger block w-full overflow-hidden rounded-lg border border-line ${className}`}
+    data-full={media.src.src}
+    data-alt={media.alt}
+  >
+    <Image
+      src={media.src}
+      alt={media.alt}
+      widths={[480, 800, 1200]}
+      sizes="(max-width: 768px) 90vw, 600px"
+      class="h-full w-full object-cover"
+      loading="lazy"
+    />
+  </button>
+)}
+{media.kind === "gif" && (
+  <button
+    type="button"
+    class={`media-trigger block w-full overflow-hidden rounded-lg border border-line ${className}`}
+    data-full={media.src}
+    data-alt={media.alt}
+  >
+    <img src={media.src} alt={media.alt} loading="lazy" class="h-full w-full object-cover" />
+  </button>
+)}
+{media.kind === "video" && (
+  <video
+    src={media.src}
+    poster={media.poster?.src}
+    controls
+    preload="none"
+    aria-label={media.alt}
+    class={`w-full rounded-lg border border-line ${className}`}
+  ></video>
+)}
+{media.kind === "decor" && (
+  <div
+    role="img"
+    aria-label={media.alt}
+    class={`flex items-center justify-center gap-[3px] overflow-hidden rounded-lg border border-line bg-panel px-6 ${className}`}
+  >
+    {bars.map((h) => (
+      <span
+        class="w-1.5 rounded-full bg-gradient-to-t from-accent/30 to-accent-soft/80"
+        style={`height:${h}%`}
+      ></span>
+    ))}
+  </div>
+)}
