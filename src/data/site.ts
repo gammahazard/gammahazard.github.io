@@ -21,7 +21,7 @@ export const site = {
   skills: [
     { group: "AI / ML", items: ["YOLOv8", "InsightFace", "on-device LLMs (Qwen3, Ollama)", "NVIDIA grounding models"] },
     { group: "Systems & Edge", items: ["Rust", "WASI 0.2 / Wasmtime", "Leptos", "Cloudflare Workers", "capability-based security"] },
-    { group: "Hardware / Embedded", items: ["ESP32", "Raspberry Pi", "Siemens S7-1200 PLC", "RS-485", "custom DSP"] },
+    { group: "Hardware / Embedded", items: ["Raspberry Pi (Pico 2 W / Pi 4)", "Arduino", "Siemens S7-1200 PLC", "RS-485", "custom DSP"] },
     { group: "Web", items: ["React / TypeScript", "Vite", "Astro", "Tailwind", "FastAPI", "Docker Compose"] },
   ],
 } as const;

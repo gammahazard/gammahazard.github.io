@@ -80,8 +80,8 @@ export const featured: Project[] = [
     oneLiner: "Privacy-first nursery sound monitor.",
     blurb:
       "Listens for sustained noise at the nursery door and ducks the living-room TV in seconds, detects crying via spectral analysis, and pings my phone. Runs entirely on the home LAN, with no cloud and no audio recording.",
-    tags: ["ESP32 (Rust)", "Goertzel DSP", "harmonic tracking", "PWA", "WebSocket"],
-    hardware: "ESP32 microphone node controlling the TV over the LAN.",
+    tags: ["Rust (Pico 2 W)", "Goertzel DSP", "harmonic tracking", "PWA", "WebSocket"],
+    hardware: "Raspberry Pi Pico 2 W with an I²S mic, controlling the TV over the LAN.",
     repo: "https://github.com/gammahazard/sound-sensor",
     media: {
       kind: "decor",
