@@ -29,7 +29,7 @@ export const featured: Project[] = [
     title: "Vision Labs",
     oneLiner: "Self-hosted, multi-camera AI security platform.",
     blurb:
-      "Person and vehicle detection, face recognition, and an LLM chat assistant with 19 tools, processing live RTSP feeds. All local via Docker Compose, zero cloud.",
+      "Person, face, and vehicle detection plus a 19-tool LLM chat assistant over live RTSP feeds, with Telegram alerts (AI scene descriptions) and live Grafana/Prometheus metrics. All local via Docker Compose, zero cloud.",
     tags: ["YOLOv8", "InsightFace", "Qwen3-14B", "FastAPI", "Redis", "Docker", "CUDA 12.8"],
     hardware:
       "Built and tested on a dual-GPU rig (RTX 5070 Ti + RTX 3090); tiers for smaller cards.",
@@ -46,7 +46,7 @@ export const featured: Project[] = [
     title: "Locate Anything",
     oneLiner: "A web UI for NVIDIA LocateAnything-3B.",
     blurb:
-      "Open-vocabulary object detection and grounding on your own GPU. Describe what to find in plain English and get it back with boxes drawn. One `docker compose up`, with a no-GPU mock mode for development.",
+      "One prompt, six grounding tasks on your own GPU: detection, phrase grounding, OCR, document layout, GUI grounding, and pointing. Describe what to find in plain English and get boxes back. One `docker compose up`, with a no-GPU mock mode for development.",
     tags: ["FastAPI", "React / Vite", "Tailwind", "SQLite", "Docker GPU"],
     note: "UI code is Apache-2.0; the NVIDIA LocateAnything-3B model is under a non-commercial research license.",
     repo: "https://github.com/gammahazard/locate-anything",
