@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Brainstorming visual-companion session (local only)
+.superpowers/
+
+# Env / editor / OS
+.env
+.env.*
+.DS_Store
+*.log
