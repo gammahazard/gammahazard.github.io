@@ -1,0 +1,37 @@
+---
+import MediaEmbed from "./MediaEmbed.astro";
+import type { Project } from "../data/projects";
+interface Props { project: Project; index: number; }
+const { project, index } = Astro.props;
+const flip = index % 2 === 1;
+---
+<article class="reveal grid items-center gap-8 border-t border-line py-14 md:grid-cols-2 md:gap-12">
+  <div class={flip ? "md:order-2" : ""}>
+    <p class="font-mono text-xs text-accent">{String(project.order).padStart(2, "0")}</p>
+    <h3 class="mt-1.5 font-serif text-2xl md:text-[28px]">{project.title}</h3>
+    <p class="mt-1 text-sm text-muted">{project.oneLiner}</p>
+    <p class="mt-4 max-w-md text-[13.5px] leading-relaxed text-muted">{project.blurb}</p>
+    {project.hardware && (
+      <p class="mt-3 max-w-md text-xs leading-relaxed text-faint">{project.hardware}</p>
+    )}
+    {project.note && (
+      <p class="mt-3 max-w-md border-l-2 border-accent/40 pl-3 text-xs leading-relaxed text-faint">
+        {project.note}
+      </p>
+    )}
+    <div class="mt-4 flex flex-wrap gap-1.5">
+      {project.tags.map((t) => (
+        <span class="rounded-full border border-accent/25 px-2.5 py-1 font-mono text-[10.5px] text-accent-soft">{t}</span>
+      ))}
+    </div>
+    <div class="mt-5 flex gap-4 font-mono text-[13px]">
+      <a href={project.repo} target="_blank" rel="noopener" class="text-ink hover:text-accent">GitHub ↗</a>
+      {project.demo && (
+        <a href={project.demo} target="_blank" rel="noopener" class="text-ink hover:text-accent">Live demo ↗</a>
+      )}
+    </div>
+  </div>
+  <div class={flip ? "md:order-1" : ""}>
+    <MediaEmbed media={project.media} class="aspect-[4/3]" />
+  </div>
+</article>

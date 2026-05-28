@@ -2,13 +2,19 @@
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
+import FeaturedProject from "../components/FeaturedProject.astro";
 import Footer from "../components/Footer.astro";
+import { featured } from "../data/projects";
 ---
 <Base>
   <span id="top"></span>
   <Nav />
   <main class="mx-auto max-w-[1040px] px-6">
     <Hero />
+    <section id="work" class="py-10">
+      <p class="font-mono text-xs uppercase tracking-[0.16em] text-faint">Selected work</p>
+      {featured.map((p, i) => <FeaturedProject project={p} index={i} />)}
+    </section>
   </main>
   <Footer />
 </Base>
