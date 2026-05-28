@@ -1,0 +1,24 @@
+---
+import { site } from "../data/site";
+---
+<section id="about" class="reveal grid gap-10 border-t border-line py-16 md:grid-cols-[1fr_1fr]">
+  <div>
+    <p class="font-mono text-xs uppercase tracking-[0.16em] text-faint">About</p>
+    <div class="mt-6 space-y-4 text-[14px] leading-relaxed text-muted">
+      {site.bio.map((p) => <p>{p}</p>)}
+      <p class="text-faint">{site.earlierWork}</p>
+    </div>
+  </div>
+  <div class="md:pt-12">
+    <div class="grid gap-6 sm:grid-cols-2">
+      {site.skills.map((s) => (
+        <div>
+          <h3 class="font-mono text-[11px] uppercase tracking-wider text-accent">{s.group}</h3>
+          <ul class="mt-2 space-y-1 text-[13px] text-muted">
+            {s.items.map((i) => <li>{i}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

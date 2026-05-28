@@ -1,0 +1,13 @@
+---
+import { site } from "../data/site";
+---
+<section id="contact" class="reveal border-t border-line py-16">
+  <p class="font-mono text-xs uppercase tracking-[0.16em] text-faint">Contact</p>
+  <h2 class="mt-5 max-w-xl font-serif text-3xl">
+    Building something self-hosted, on-device, or close to the metal? Let's talk.
+  </h2>
+  <div class="mt-7 flex flex-wrap gap-5 font-mono text-[13px]">
+    <a href={`mailto:${site.email}`} class="text-accent hover:text-accent-soft">{site.email}</a>
+    <a href={site.github} target="_blank" rel="noopener" class="text-ink hover:text-accent">GitHub ↗</a>
+  </div>
+</section>
