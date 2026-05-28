@@ -1,0 +1,38 @@
+---
+import { site } from "../data/site";
+---
+<section class="grid items-center gap-10 py-20 md:grid-cols-[1.15fr_.85fr] md:py-28">
+  <div class="reveal">
+    <p class="font-mono text-xs uppercase tracking-[0.16em] text-accent">{site.kicker}</p>
+    <h1 class="mt-5 font-serif text-4xl font-normal leading-[1.07] tracking-tight md:text-5xl">
+      {site.headline}
+    </h1>
+    <p class="mt-6 max-w-md text-[15px] leading-relaxed text-muted">{site.sub}</p>
+    <div class="mt-8 flex items-center gap-4">
+      <a
+        href="#work"
+        class="rounded-lg bg-accent px-5 py-2.5 font-mono text-[13px] text-[#1a120a] transition-opacity hover:opacity-90"
+      >View work →</a>
+      <a
+        href={site.github}
+        target="_blank"
+        rel="noopener"
+        class="font-mono text-[13px] text-muted hover:text-ink"
+      >GitHub ↗</a>
+    </div>
+  </div>
+  <div class="reveal rounded-xl border border-line bg-panel p-3 shadow-2xl">
+    <div class="mb-2.5 flex gap-1.5">
+      <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
+      <span class="h-2.5 w-2.5 rounded-full bg-white/10"></span>
+      <span class="h-2.5 w-2.5 rounded-full bg-white/10"></span>
+    </div>
+    <div class="grid grid-cols-3 gap-2">
+      <div class="h-10 rounded-md bg-accent/20"></div>
+      <div class="col-span-2 h-10 rounded-md bg-sky-400/15"></div>
+      <div class="h-10 rounded-md bg-lime-400/15"></div>
+      <div class="h-10 rounded-md bg-white/[0.04]"></div>
+      <div class="h-10 rounded-md bg-white/[0.04]"></div>
+    </div>
+  </div>
+</section>
