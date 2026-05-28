@@ -1,6 +1,7 @@
 import type { ImageMetadata } from "astro";
 import visionDashboard from "../assets/projects/vision-labs-dashboard.png";
 import locateDetection from "../assets/projects/locate-detection.png";
+import harvesterRig from "../assets/projects/harvester-rig.jpg";
 
 export type Media =
   | { kind: "image"; src: ImageMetadata; alt: string }
@@ -57,6 +58,23 @@ export const featured: Project[] = [
     order: 2,
   },
   {
+    slug: "harvester",
+    title: "Harvester OT/ICS Testbed",
+    oneLiner: "Hands-on industrial control-systems security rig.",
+    blurb:
+      "A hub-and-spoke testbed on real industrial gear — a Siemens S7-1200 PLC, Kunbus RevPi, Raspberry Pi, and Arduino — wired into IEC 62443 security zones with a live sensor→PLC→dashboard pipeline you can watch react in real time.",
+    tags: ["Siemens S7-1200", "Kunbus RevPi", "IEC 62443", "Raspberry Pi", "RS-485"],
+    hardware:
+      "Real PLCs, relay banks, and buck-converter power stages — documented end to end, down to a hand-drawn star-ground schematic.",
+    repo: "https://github.com/gammahazard/harvester-os-portfolio",
+    media: {
+      kind: "image",
+      src: harvesterRig,
+      alt: "The Harvester testbed on a workbench: Siemens S7-1200 PLC, orange Kunbus RevPi, relay banks, fans, and a green industrial stack light.",
+    },
+    order: 3,
+  },
+  {
     slug: "sound-sensor",
     title: "Guardian Sound Sensor",
     oneLiner: "Privacy-first nursery sound monitor.",
@@ -70,21 +88,11 @@ export const featured: Project[] = [
       variant: "waveform",
       alt: "Stylised audio waveform representing real-time sound analysis.",
     },
-    order: 3,
+    order: 4,
   },
 ];
 
 export const more: Omit<Project, "media">[] = [
-  {
-    slug: "harvester",
-    title: "Harvester OT/ICS Testbed",
-    oneLiner: "Hands-on industrial control-systems security rig.",
-    blurb:
-      "A hub-and-spoke testbed on real industrial gear — Siemens S7-1200 PLC, Kunbus RevPi, Raspberry Pi, Arduino — with IEC 62443 zoning and a live sensor→PLC→dashboard pipeline.",
-    tags: ["Siemens S7-1200", "RevPi", "IEC 62443", "RS-485"],
-    repo: "https://github.com/gammahazard/harvester-os-portfolio",
-    order: 1,
-  },
   {
     slug: "edge-wasi-runtime",
     title: "Edge WASI Runtime",
@@ -93,7 +101,7 @@ export const more: Omit<Project, "media">[] = [
       "A secure IoT runtime that runs untrusted Python plugins on Raspberry Pi via the WASI Component Model — hot-swap a running driver in under 10ms.",
     tags: ["Rust", "WASI 0.2", "Wasmtime", "Tokio"],
     repo: "https://github.com/gammahazard/edge-wasi-runtime",
-    order: 2,
+    order: 1,
   },
   {
     slug: "raft-consensus",
@@ -103,7 +111,7 @@ export const more: Omit<Project, "media">[] = [
       "The same Rust binary runs in the browser and on a Raspberry Pi cluster — leader election, log replication, and partitions visualised live. 120+ tests, chaos controls.",
     tags: ["Rust", "WASI 0.2", "Leptos"],
     repo: "https://github.com/gammahazard/Raft-Consensus",
-    order: 3,
+    order: 2,
   },
   {
     slug: "edge-protocol-demo",
@@ -113,7 +121,7 @@ export const more: Omit<Project, "media">[] = [
       "URL shortener (Workers KV), an edge rate limiter, and a capability sandbox — the same capability-security ideas as WASI, at the cloud edge.",
     tags: ["Rust → WASM", "Cloudflare Workers", "Leptos"],
     repo: "https://github.com/gammahazard/edge-protocol-demo",
-    order: 4,
+    order: 3,
   },
   {
     slug: "convertlocal",
@@ -123,7 +131,7 @@ export const more: Omit<Project, "media">[] = [
       "Batch-convert media with FFmpeg.wasm — nothing is uploaded, files never leave the device.",
     tags: ["FFmpeg.wasm", "TypeScript", "PWA"],
     repo: "https://github.com/gammahazard/secure-file-converter",
-    order: 5,
+    order: 4,
   },
   {
     slug: "terminal-portfolio",
@@ -134,6 +142,6 @@ export const more: Omit<Project, "media">[] = [
     tags: ["Rust", "Leptos", "WASM"],
     repo: "https://github.com/gammahazard/Vanguard-Portfolio",
     demo: "https://gammahazard.github.io/Vanguard-Portfolio/",
-    order: 6,
+    order: 5,
   },
 ];
