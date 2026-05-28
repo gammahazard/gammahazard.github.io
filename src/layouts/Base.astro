@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+import Enhance from "../components/Enhance.astro";
+import { site } from "../data/site";
+interface Props { title?: string; description?: string; }
+const {
+  title = `${site.name} — ${site.kicker}`,
+  description = site.sub,
+} = Astro.props;
+const ogUrl = new URL("og.png", Astro.site).href;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} type="image/svg+xml" />
+    <link rel="canonical" href={Astro.site?.href} />
+  </head>
+  <body class="bg-bg text-ink antialiased">
+    <slot />
+    <Enhance />
+  </body>
+</html>

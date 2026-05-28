@@ -1,0 +1,21 @@
+---
+import { site } from "../data/site";
+---
+<header class="sticky top-0 z-40 border-b border-line bg-bg/80 backdrop-blur-md">
+  <nav class="mx-auto flex max-w-[1040px] items-center justify-between px-6 py-4">
+    <a href="#top" class="font-serif text-lg tracking-tight">
+      {site.name}<span class="text-accent">.</span>
+    </a>
+    <div class="flex items-center gap-7 text-sm text-muted">
+      {site.nav.map((n) => (
+        <a href={n.href} class="hidden transition-colors hover:text-ink sm:inline">{n.label}</a>
+      ))}
+      <a
+        href={site.github}
+        target="_blank"
+        rel="noopener"
+        class="font-mono text-xs text-accent hover:text-accent-soft"
+      >GitHub ↗</a>
+    </div>
+  </nav>
+</header>

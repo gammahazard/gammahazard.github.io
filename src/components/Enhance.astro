@@ -1,0 +1,59 @@
+---
+---
+<div
+  id="lightbox"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 p-6"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Enlarged media"
+>
+  <img id="lightbox-img" src="" alt="" class="max-h-[88vh] max-w-[92vw] rounded-lg" />
+  <button
+    id="lightbox-close"
+    aria-label="Close"
+    class="absolute right-5 top-5 font-mono text-sm text-white/80 hover:text-white"
+  >Close ✕</button>
+</div>
+<script>
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = document.querySelectorAll<HTMLElement>(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach((el) => el.classList.add("is-visible"));
+  } else {
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        }),
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+    );
+    items.forEach((el) => io.observe(el));
+  }
+
+  const box = document.getElementById("lightbox")!;
+  const img = document.getElementById("lightbox-img") as HTMLImageElement;
+  const open = (src: string, alt: string) => {
+    img.src = src;
+    img.alt = alt;
+    box.classList.remove("hidden");
+    box.classList.add("flex");
+  };
+  const close = () => {
+    box.classList.add("hidden");
+    box.classList.remove("flex");
+    img.src = "";
+  };
+  document.querySelectorAll<HTMLElement>(".media-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => open(btn.dataset.full || "", btn.dataset.alt || ""));
+  });
+  document.getElementById("lightbox-close")!.addEventListener("click", close);
+  box.addEventListener("click", (e) => {
+    if (e.target === box) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+</script>

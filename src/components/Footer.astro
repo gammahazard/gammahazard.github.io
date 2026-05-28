@@ -1,0 +1,13 @@
+---
+import { site } from "../data/site";
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-line">
+  <div class="mx-auto flex max-w-[1040px] flex-col gap-2 px-6 py-10 text-sm text-faint sm:flex-row sm:items-center sm:justify-between">
+    <p class="font-mono text-xs">© {year} {site.name}</p>
+    <p class="font-mono text-xs">
+      Built with Astro + Tailwind ·
+      <a href="https://github.com/gammahazard/gammahazard.github.io" class="hover:text-ink">source</a>
+    </p>
+  </div>
+</footer>

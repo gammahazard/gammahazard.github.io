@@ -1,10 +1,13 @@
 ---
-import '../styles/global.css';
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
-<!doctype html>
-<html lang="en">
-  <head><meta charset="utf-8" /><title>CM Mongo</title></head>
-  <body>
-    <h1 class="font-serif text-4xl text-accent">Scaffold OK</h1>
-  </body>
-</html>
+<Base>
+  <span id="top"></span>
+  <Nav />
+  <main class="mx-auto max-w-[1040px] px-6">
+    <p class="py-40 font-serif text-3xl">Sections go here.</p>
+  </main>
+  <Footer />
+</Base>
