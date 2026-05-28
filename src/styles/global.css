@@ -10,7 +10,7 @@
   --color-panel: #14141a;
   --color-ink: #efece5;
   --color-muted: #a7a39b;
-  --color-faint: #6f6c65;
+  --color-faint: #807d76;
   --color-accent: #d98a4f;
   --color-accent-soft: #f3c79a;
   --color-line: rgba(255, 255, 255, 0.08);
@@ -32,6 +32,15 @@ html {
 }
 
 body { margin: 0; }
+
+/* keyboard focus visibility */
+a:focus-visible,
+button:focus-visible,
+.media-trigger:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 /* scroll-reveal initial state; .is-visible added by the island */
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }

@@ -15,11 +15,11 @@ import { featured, more } from "../data/projects";
   <main class="mx-auto max-w-[1040px] px-6">
     <Hero />
     <section id="work" class="py-10">
-      <p class="font-mono text-xs uppercase tracking-[0.16em] text-faint">Selected work</p>
+      <h2 class="font-mono text-xs font-normal uppercase tracking-[0.16em] text-faint">Selected work</h2>
       {featured.map((p, i) => <FeaturedProject project={p} index={i} />)}
     </section>
     <section id="more" class="py-14">
-      <p class="font-mono text-xs uppercase tracking-[0.16em] text-faint">More projects</p>
+      <h2 class="font-mono text-xs font-normal uppercase tracking-[0.16em] text-faint">More projects</h2>
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {more.map((p) => <ProjectCard project={p} />)}
       </div>
