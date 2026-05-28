@@ -14,12 +14,16 @@ import { featured, more } from "../data/projects";
   <Nav />
   <main class="mx-auto max-w-[1040px] px-6">
     <Hero />
-    <section id="work" class="py-10">
-      <h2 class="font-mono text-xs font-normal uppercase tracking-[0.16em] text-faint">Selected work</h2>
+    <section id="work" class="scroll-mt-20 py-10">
+      <h2 class="flex items-center gap-3 font-mono text-sm uppercase tracking-[0.2em] text-ink">
+        <span class="h-px w-8 bg-accent"></span>Selected work
+      </h2>
       {featured.map((p, i) => <FeaturedProject project={p} index={i} />)}
     </section>
     <section id="more" class="py-14">
-      <h2 class="font-mono text-xs font-normal uppercase tracking-[0.16em] text-faint">More projects</h2>
+      <h2 class="flex items-center gap-3 font-mono text-sm uppercase tracking-[0.2em] text-ink">
+        <span class="h-px w-8 bg-accent"></span>More projects
+      </h2>
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {more.map((p) => <ProjectCard project={p} />)}
       </div>

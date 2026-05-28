@@ -29,7 +29,7 @@ export const featured: Project[] = [
     title: "Vision Labs",
     oneLiner: "Self-hosted, multi-camera AI security platform.",
     blurb:
-      "Person & vehicle detection, face recognition, and an LLM chat assistant with 19 tools — processing live RTSP feeds, all local via Docker Compose with zero cloud.",
+      "Person and vehicle detection, face recognition, and an LLM chat assistant with 19 tools, processing live RTSP feeds. All local via Docker Compose, zero cloud.",
     tags: ["YOLOv8", "InsightFace", "Qwen3-14B", "FastAPI", "Redis", "Docker", "CUDA 12.8"],
     hardware:
       "Built and tested on a dual-GPU rig (RTX 5070 Ti + RTX 3090); tiers for smaller cards.",
@@ -46,7 +46,7 @@ export const featured: Project[] = [
     title: "Locate Anything",
     oneLiner: "A web UI for NVIDIA LocateAnything-3B.",
     blurb:
-      "Open-vocabulary object detection & grounding on your own GPU — describe what to find in plain English and get it back with boxes drawn. One `docker compose up`, with a no-GPU mock mode for development.",
+      "Open-vocabulary object detection and grounding on your own GPU. Describe what to find in plain English and get it back with boxes drawn. One `docker compose up`, with a no-GPU mock mode for development.",
     tags: ["FastAPI", "React / Vite", "Tailwind", "SQLite", "Docker GPU"],
     note: "UI code is Apache-2.0; the NVIDIA LocateAnything-3B model is under a non-commercial research license.",
     repo: "https://github.com/gammahazard/locate-anything",
@@ -62,10 +62,10 @@ export const featured: Project[] = [
     title: "Harvester OT/ICS Testbed",
     oneLiner: "Hands-on industrial control-systems security rig.",
     blurb:
-      "A hub-and-spoke testbed on real industrial gear — a Siemens S7-1200 PLC, Kunbus RevPi, Raspberry Pi, and Arduino — wired into IEC 62443 security zones with a live sensor→PLC→dashboard pipeline you can watch react in real time.",
+      "A hub-and-spoke testbed on real industrial gear: a Siemens S7-1200 PLC, Kunbus RevPi, Raspberry Pi, and Arduino, wired into IEC 62443 security zones with a live sensor→PLC→dashboard pipeline you can watch react in real time.",
     tags: ["Siemens S7-1200", "Kunbus RevPi", "IEC 62443", "Raspberry Pi", "RS-485"],
     hardware:
-      "Real PLCs, relay banks, and buck-converter power stages — documented end to end, down to a hand-drawn star-ground schematic.",
+      "Real PLCs, relay banks, and buck-converter power stages, documented end to end, down to a hand-drawn star-ground schematic.",
     repo: "https://github.com/gammahazard/harvester-os-portfolio",
     media: {
       kind: "image",
@@ -79,7 +79,7 @@ export const featured: Project[] = [
     title: "Guardian Sound Sensor",
     oneLiner: "Privacy-first nursery sound monitor.",
     blurb:
-      "Listens for sustained noise at the nursery door and ducks the living-room TV in seconds, detects crying via spectral analysis, and notifies your phone. Entirely on the home LAN — no cloud, no audio recording.",
+      "Listens for sustained noise at the nursery door and ducks the living-room TV in seconds, detects crying via spectral analysis, and pings my phone. Runs entirely on the home LAN, with no cloud and no audio recording.",
     tags: ["ESP32 (Rust)", "Goertzel DSP", "harmonic tracking", "PWA", "WebSocket"],
     hardware: "ESP32 microphone node controlling the TV over the LAN.",
     repo: "https://github.com/gammahazard/sound-sensor",
@@ -98,7 +98,7 @@ export const more: Omit<Project, "media">[] = [
     title: "Edge WASI Runtime",
     oneLiner: "Hot-swappable sandboxed plugins on a Pi.",
     blurb:
-      "A secure IoT runtime that runs untrusted Python plugins on Raspberry Pi via the WASI Component Model — hot-swap a running driver in under 10ms.",
+      "A secure IoT runtime that runs untrusted Python plugins on Raspberry Pi via the WASI Component Model. Hot-swap a running driver in under 10ms.",
     tags: ["Rust", "WASI 0.2", "Wasmtime", "Tokio"],
     repo: "https://github.com/gammahazard/edge-wasi-runtime",
     order: 1,
@@ -108,7 +108,7 @@ export const more: Omit<Project, "media">[] = [
     title: "Raft Consensus",
     oneLiner: "Distributed consensus in the browser and on a Pi cluster.",
     blurb:
-      "The same Rust binary runs in the browser and on a Raspberry Pi cluster — leader election, log replication, and partitions visualised live. 120+ tests, chaos controls.",
+      "The same Rust binary runs in the browser and on a Raspberry Pi cluster: leader election, log replication, and partitions visualised live. 120+ tests, chaos controls.",
     tags: ["Rust", "WASI 0.2", "Leptos"],
     repo: "https://github.com/gammahazard/Raft-Consensus",
     order: 2,
@@ -118,7 +118,7 @@ export const more: Omit<Project, "media">[] = [
     title: "Edge Protocol Demo",
     oneLiner: "Production-style Cloudflare Workers + Leptos.",
     blurb:
-      "URL shortener (Workers KV), an edge rate limiter, and a capability sandbox — the same capability-security ideas as WASI, at the cloud edge.",
+      "URL shortener (Workers KV), an edge rate limiter, and a capability sandbox. The same capability-security ideas as WASI, at the cloud edge.",
     tags: ["Rust → WASM", "Cloudflare Workers", "Leptos"],
     repo: "https://github.com/gammahazard/edge-protocol-demo",
     order: 3,
@@ -128,7 +128,7 @@ export const more: Omit<Project, "media">[] = [
     title: "ConvertLocal",
     oneLiner: "Image / audio / video conversion, 100% in-browser.",
     blurb:
-      "Batch-convert media with FFmpeg.wasm — nothing is uploaded, files never leave the device.",
+      "Batch-convert media with FFmpeg.wasm. Nothing is uploaded, and files never leave the device.",
     tags: ["FFmpeg.wasm", "TypeScript", "PWA"],
     repo: "https://github.com/gammahazard/secure-file-converter",
     order: 4,

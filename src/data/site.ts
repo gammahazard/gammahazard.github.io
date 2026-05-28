@@ -1,8 +1,8 @@
 export const site = {
-  name: "CM Mongo",
+  name: "Mongo",
   kicker: "independent systems engineer",
-  headline: "I build self-hosted AI systems — and the hardware underneath them.",
-  sub: "Multi-camera vision, on-device language models, sandboxed edge runtimes. Running on my own GPUs and PLCs, one command up, with the receipts to prove it works.",
+  headline: "I build self-hosted AI systems, and the hardware they run on.",
+  sub: "Multi-camera vision, on-device language models, and sandboxed edge runtimes, all running on my own GPUs and hardware. One command up, and I'd rather show you a live demo than tell you it works.",
   nav: [
     { label: "Work", href: "#work" },
     { label: "About", href: "#about" },
@@ -10,13 +10,14 @@ export const site = {
   ],
   github: "https://github.com/gammahazard",
   email: "mongocmdev@gmail.com",
+  cyberverse: "https://www.cyberversegame.io/",
   bio: [
-    "I'm an independent engineer who builds complete systems end-to-end — hardware, backend, frontend, and the CI that keeps them honest.",
-    "My bias is self-hosted, zero-cloud, and privacy-first: things that run on your own machines and don't phone home. I'd rather show a live demo and real numbers than make a claim.",
-    "Lately that means self-hosted AI — multi-camera vision, on-device LLMs, and open-vocabulary detection — on top of years of edge, embedded, and distributed-systems work.",
+    "I'm an independent engineer, and I build complete systems end to end: the hardware, the backend, the frontend, and the CI that keeps them honest.",
+    "I lean self-hosted, zero-cloud, and privacy-first. I like things that run on your own machines and don't phone home, and I'd rather show real numbers than make a claim.",
+    "Lately that's meant self-hosted AI: multi-camera vision, on-device LLMs, and open-vocabulary detection, sitting on top of years of edge, embedded, and distributed-systems work.",
   ],
   earlierWork:
-    "Earlier: several years shipping web3/crypto products, including co-founding CyberVerse — tooling across Ergo, Solana, and Cardano.",
+    'Before that, I spent a few years building web3 and crypto products, including co-founding <a href="https://www.cyberversegame.io/" target="_blank" rel="noopener" class="text-accent hover:text-accent-soft">CyberVerse</a>, with tooling across Ergo, Solana, and Cardano.',
   skills: [
     { group: "AI / ML", items: ["YOLOv8", "InsightFace", "on-device LLMs (Qwen3, Ollama)", "NVIDIA grounding models"] },
     { group: "Systems & Edge", items: ["Rust", "WASI 0.2 / Wasmtime", "Leptos", "Cloudflare Workers", "capability-based security"] },

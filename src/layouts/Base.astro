@@ -4,7 +4,7 @@ import Enhance from "../components/Enhance.astro";
 import { site } from "../data/site";
 interface Props { title?: string; description?: string; }
 const {
-  title = `${site.name} — ${site.kicker}`,
+  title = `${site.name} · ${site.kicker}`,
   description = site.sub,
 } = Astro.props;
 const ogUrl = new URL("og.png", Astro.site).href;
