@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/inter";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@theme {
+  --color-bg: #0e0e11;
+  --color-panel: #14141a;
+  --color-ink: #efece5;
+  --color-muted: #a7a39b;
+  --color-faint: #6f6c65;
+  --color-accent: #d98a4f;
+  --color-accent-soft: #f3c79a;
+  --color-line: rgba(255, 255, 255, 0.08);
+
+  --font-serif: "Newsreader Variable", Georgia, serif;
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body { margin: 0; }
+
+/* scroll-reveal initial state; .is-visible added by the island */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
