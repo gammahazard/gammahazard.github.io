@@ -2,6 +2,7 @@ import type { ImageMetadata } from "astro";
 import visionDashboard from "../assets/projects/vision-labs-dashboard.png";
 import locateDetection from "../assets/projects/locate-detection.png";
 import groundworkEditor from "../assets/projects/groundwork-editor.jpg";
+import vitrineToken from "../assets/projects/vitrine-token.png";
 import harvesterRig from "../assets/projects/harvester-rig.jpg";
 
 export type Media =
@@ -78,6 +79,24 @@ export const featured: Project[] = [
     order: 3,
   },
   {
+    slug: "vitrine",
+    title: "Vitrine",
+    oneLiner: "Live marketplace and archive for NFT collections.",
+    blurb:
+      "Live prices, order-book depth, and per-trait floors for collections on Robinhood Chain, with every token rendered in 3D as the physical card it could become. A paid-listing product built so a missing upstream degrades a panel, never the page.",
+    tags: ["Next.js", "React Three Fiber", "wagmi / viem", "Python", "OpenSCAD"],
+    hardware:
+      "The cards are real: a Python pipeline traces each token's art, emits OpenSCAD, and builds multi-material 3MF plates for a Bambu printer.",
+    note: "Code private — live site linked.",
+    demo: "https://vitrine-market.vercel.app",
+    media: {
+      kind: "image",
+      src: vitrineToken,
+      alt: "Vitrine token page for NTRPY #990: the 3D card with its pixel-art mark beside live price, best offer, and trait table.",
+    },
+    order: 4,
+  },
+  {
     slug: "harvester",
     title: "Harvester OT/ICS Testbed",
     oneLiner: "Hands-on industrial control-systems security rig.",
@@ -92,7 +111,7 @@ export const featured: Project[] = [
       src: harvesterRig,
       alt: "The Harvester testbed on a workbench: Siemens S7-1200 PLC, orange Kunbus RevPi, relay banks, fans, and a green industrial stack light.",
     },
-    order: 4,
+    order: 5,
   },
   {
     slug: "sound-sensor",
@@ -108,21 +127,11 @@ export const featured: Project[] = [
       variant: "waveform",
       alt: "Stylised audio waveform representing real-time sound analysis.",
     },
-    order: 5,
+    order: 6,
   },
 ];
 
 export const more: Omit<Project, "media">[] = [
-  {
-    slug: "vitrine",
-    title: "Vitrine",
-    oneLiner: "Live marketplace and archive for NFT collections.",
-    blurb:
-      "Live prices, order-book depth, and per-trait floors for collections on Robinhood Chain, with tokens rendered in 3D as the physical cards they could become. A paid-listing product built so a missing upstream degrades a panel, never the page. Code private — live site linked.",
-    tags: ["Next.js", "React Three Fiber", "wagmi / viem", "TanStack Query"],
-    demo: "https://vitrine-market.vercel.app",
-    order: 1,
-  },
   {
     slug: "edge-wasi-runtime",
     title: "Edge WASI Runtime",
@@ -131,7 +140,7 @@ export const more: Omit<Project, "media">[] = [
       "A secure IoT runtime that runs untrusted Python plugins on Raspberry Pi via the WASI Component Model. Hot-swap a running driver in under 10ms.",
     tags: ["Rust", "WASI 0.2", "Wasmtime", "Tokio"],
     repo: "https://github.com/gammahazard/edge-wasi-runtime",
-    order: 2,
+    order: 1,
   },
   {
     slug: "raft-consensus",
@@ -141,7 +150,7 @@ export const more: Omit<Project, "media">[] = [
       "The same Rust binary runs in the browser and on a Raspberry Pi cluster: leader election, log replication, and partitions visualised live. 120+ tests, chaos controls.",
     tags: ["Rust", "WASI 0.2", "Leptos"],
     repo: "https://github.com/gammahazard/Raft-Consensus",
-    order: 3,
+    order: 2,
   },
   {
     slug: "edge-protocol-demo",
@@ -151,7 +160,7 @@ export const more: Omit<Project, "media">[] = [
       "URL shortener (Workers KV), an edge rate limiter, and a capability sandbox. The same capability-security ideas as WASI, at the cloud edge.",
     tags: ["Rust → WASM", "Cloudflare Workers", "Leptos"],
     repo: "https://github.com/gammahazard/edge-protocol-demo",
-    order: 4,
+    order: 3,
   },
   {
     slug: "convertlocal",
@@ -161,7 +170,7 @@ export const more: Omit<Project, "media">[] = [
       "Batch-convert media with FFmpeg.wasm. Nothing is uploaded, and files never leave the device.",
     tags: ["FFmpeg.wasm", "TypeScript", "PWA"],
     repo: "https://github.com/gammahazard/secure-file-converter",
-    order: 5,
+    order: 4,
   },
   {
     slug: "terminal-portfolio",
@@ -172,6 +181,6 @@ export const more: Omit<Project, "media">[] = [
     tags: ["Rust", "Leptos", "WASM"],
     repo: "https://github.com/gammahazard/Vanguard-Portfolio",
     demo: "https://gammahazard.github.io/Vanguard-Portfolio/",
-    order: 6,
+    order: 5,
   },
 ];
