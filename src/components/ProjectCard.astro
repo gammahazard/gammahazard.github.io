@@ -2,7 +2,7 @@
 import type { Project } from "../data/projects";
 interface Props { project: Omit<Project, "media">; }
 const { project } = Astro.props;
-const href = project.demo ?? project.repo;
+const href = project.demo ?? project.repo ?? "#";
 ---
 <a
   href={href}

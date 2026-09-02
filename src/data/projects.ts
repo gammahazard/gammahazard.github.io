@@ -1,6 +1,7 @@
 import type { ImageMetadata } from "astro";
 import visionDashboard from "../assets/projects/vision-labs-dashboard.png";
 import locateDetection from "../assets/projects/locate-detection.png";
+import groundworkEditor from "../assets/projects/groundwork-editor.jpg";
 import harvesterRig from "../assets/projects/harvester-rig.jpg";
 
 export type Media =
@@ -17,7 +18,7 @@ export interface Project {
   tags: string[];
   hardware?: string;
   note?: string; // honest caveat, e.g. license
-  repo: string;
+  repo?: string; // omitted when the code is private; card links to demo instead
   demo?: string;
   media: Media;
   order: number;
@@ -58,6 +59,25 @@ export const featured: Project[] = [
     order: 2,
   },
   {
+    slug: "groundwork",
+    title: "Groundwork",
+    oneLiner: "Self-hosted vision-model trainer.",
+    blurb:
+      "Label images with dots, train YOLO and Apache-licensed challengers on your own GPUs, judge every run on a frozen holdout, then serve the winner — web cockpit, API, and Telegram data-collection bots. The trainer behind my other vision work.",
+    tags: ["YOLO / ultralytics", "PyTorch", "FastAPI", "Docker", "Telegram bots"],
+    hardware:
+      "Trains across your own machines over SSH — measured down to an 8 GB laptop card spilling into host RAM.",
+    note: "AGPL-3.0.",
+    repo: "https://github.com/gammahazard/groundwork",
+    demo: "https://groundwork-trainer.vercel.app",
+    media: {
+      kind: "image",
+      src: groundworkEditor,
+      alt: "Groundwork's dot-label editor: 286 dots placed on a tray of yellow tablets, with target, dupes, boxes, and compare tools in the toolbar.",
+    },
+    order: 3,
+  },
+  {
     slug: "harvester",
     title: "Harvester OT/ICS Testbed",
     oneLiner: "Hands-on industrial control-systems security rig.",
@@ -72,7 +92,7 @@ export const featured: Project[] = [
       src: harvesterRig,
       alt: "The Harvester testbed on a workbench: Siemens S7-1200 PLC, orange Kunbus RevPi, relay banks, fans, and a green industrial stack light.",
     },
-    order: 3,
+    order: 4,
   },
   {
     slug: "sound-sensor",
@@ -88,11 +108,21 @@ export const featured: Project[] = [
       variant: "waveform",
       alt: "Stylised audio waveform representing real-time sound analysis.",
     },
-    order: 4,
+    order: 5,
   },
 ];
 
 export const more: Omit<Project, "media">[] = [
+  {
+    slug: "vitrine",
+    title: "Vitrine",
+    oneLiner: "Live marketplace and archive for NFT collections.",
+    blurb:
+      "Live prices, order-book depth, and per-trait floors for collections on Robinhood Chain, with tokens rendered in 3D as the physical cards they could become. A paid-listing product built so a missing upstream degrades a panel, never the page. Code private — live site linked.",
+    tags: ["Next.js", "React Three Fiber", "wagmi / viem", "TanStack Query"],
+    demo: "https://ntrpy-market.vercel.app",
+    order: 1,
+  },
   {
     slug: "edge-wasi-runtime",
     title: "Edge WASI Runtime",
@@ -101,7 +131,7 @@ export const more: Omit<Project, "media">[] = [
       "A secure IoT runtime that runs untrusted Python plugins on Raspberry Pi via the WASI Component Model. Hot-swap a running driver in under 10ms.",
     tags: ["Rust", "WASI 0.2", "Wasmtime", "Tokio"],
     repo: "https://github.com/gammahazard/edge-wasi-runtime",
-    order: 1,
+    order: 2,
   },
   {
     slug: "raft-consensus",
@@ -111,7 +141,7 @@ export const more: Omit<Project, "media">[] = [
       "The same Rust binary runs in the browser and on a Raspberry Pi cluster: leader election, log replication, and partitions visualised live. 120+ tests, chaos controls.",
     tags: ["Rust", "WASI 0.2", "Leptos"],
     repo: "https://github.com/gammahazard/Raft-Consensus",
-    order: 2,
+    order: 3,
   },
   {
     slug: "edge-protocol-demo",
@@ -121,7 +151,7 @@ export const more: Omit<Project, "media">[] = [
       "URL shortener (Workers KV), an edge rate limiter, and a capability sandbox. The same capability-security ideas as WASI, at the cloud edge.",
     tags: ["Rust → WASM", "Cloudflare Workers", "Leptos"],
     repo: "https://github.com/gammahazard/edge-protocol-demo",
-    order: 3,
+    order: 4,
   },
   {
     slug: "convertlocal",
@@ -131,7 +161,7 @@ export const more: Omit<Project, "media">[] = [
       "Batch-convert media with FFmpeg.wasm. Nothing is uploaded, and files never leave the device.",
     tags: ["FFmpeg.wasm", "TypeScript", "PWA"],
     repo: "https://github.com/gammahazard/secure-file-converter",
-    order: 4,
+    order: 5,
   },
   {
     slug: "terminal-portfolio",
@@ -142,6 +172,6 @@ export const more: Omit<Project, "media">[] = [
     tags: ["Rust", "Leptos", "WASM"],
     repo: "https://github.com/gammahazard/Vanguard-Portfolio",
     demo: "https://gammahazard.github.io/Vanguard-Portfolio/",
-    order: 5,
+    order: 6,
   },
 ];
