@@ -120,7 +120,7 @@ export const more: Omit<Project, "media">[] = [
     blurb:
       "Live prices, order-book depth, and per-trait floors for collections on Robinhood Chain, with tokens rendered in 3D as the physical cards they could become. A paid-listing product built so a missing upstream degrades a panel, never the page. Code private — live site linked.",
     tags: ["Next.js", "React Three Fiber", "wagmi / viem", "TanStack Query"],
-    demo: "https://ntrpy-market.vercel.app",
+    demo: "https://vitrine-market.vercel.app",
     order: 1,
   },
   {
